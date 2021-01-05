@@ -9,6 +9,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import java.util.Map;
+
 @Component
 public class GreetingHandler {
 
@@ -19,5 +21,13 @@ public class GreetingHandler {
                 .ok()
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(body);
+    }
+
+    public Mono<ServerResponse> index(ServerRequest serverRequest) {
+        final String user = serverRequest.queryParam("user")
+                .orElse("nobody");
+        return ServerResponse
+                .ok()
+                .render("index", Map.of("user", user));
     }
 }
