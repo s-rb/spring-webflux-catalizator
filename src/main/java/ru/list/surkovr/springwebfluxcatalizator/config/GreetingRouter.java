@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.*;
 import ru.list.surkovr.springwebfluxcatalizator.handlers.GreetingHandler;
 
+// В функциональном стиле, в отличие от Контроллера
 @Configuration
 public class GreetingRouter {
 
@@ -13,7 +14,7 @@ public class GreetingRouter {
     public RouterFunction<ServerResponse> route(GreetingHandler greetingHandler) {
         final RequestPredicate route = RequestPredicates
                 .GET("/hello")
-                .and(RequestPredicates.accept(MediaType.TEXT_PLAIN));
+                .and(RequestPredicates.accept(MediaType.APPLICATION_JSON));
         return RouterFunctions
                 .route(route, greetingHandler::hello)
                 .andRoute(RequestPredicates.GET("/"), greetingHandler::index);
