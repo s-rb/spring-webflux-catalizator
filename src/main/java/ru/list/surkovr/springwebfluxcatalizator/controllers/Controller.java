@@ -1,32 +1,32 @@
 package ru.list.surkovr.springwebfluxcatalizator.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import ru.list.surkovr.springwebfluxcatalizator.domain.Message;
-
-import java.util.Objects;
-import java.util.Optional;
+import ru.list.surkovr.springwebfluxcatalizator.service.MessageService;
 
 // Для наглядности - описание по-старому (в отличие от нового функционального стиля в GreetingRouter
 @RestController
 @RequestMapping("/controller")
 public class Controller {
 
+    @Autowired
+    private final MessageService messageService;
+
+    public Controller(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
     @GetMapping
     public Flux<Message> list(@RequestParam(required = false, defaultValue = "0") Long start,
                               @RequestParam(required = false, defaultValue = "3") Long count) {
-        return Flux
-                .just("Hello reactive!",
-                        "Second",
-                        "Third",
-                        "Fourth post",
-                        "Fifth")
-                // Пагинация - с какого начинать и сколько элементов взять
-                .skip(start)
-                .take(count)
-                .map(Message::new);
+        return messageService.list();
+    }
+
+    @PostMapping
+    public Mono<Message> addOne(@RequestBody Message message) {
+        return messageService.addOne(message);
     }
 }
