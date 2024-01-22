@@ -35,7 +35,7 @@ public class UserController {
             userService.findByUsername(credentials.getFirst("username"))
                     .cast(User.class)
                     .map(userDetails ->
-                        // Todo шифрование добавить
+                        // Todo add encryption
                         Objects.equals(
                                 credentials.getFirst("password"),
                                 userDetails.getPassword()

@@ -21,8 +21,8 @@ public class JwtUtil {
     private String expirationTimeS;
 
     public String extractUsername(String authToken) {
-        // Берем ключ, передаем в билдер, который построил парсер, куда передаем токен, с которого получаем контент
-        // в расшифрованном виде и вытаскиваем сабджект - юзер, который там лежит
+        // We take the key, pass it to the builder that built the parser, where we pass the token from which we get the content
+        // in decrypted form and pull out the subject - the user that is there
         return getClaimsFromToken(authToken).getSubject();
     }
 

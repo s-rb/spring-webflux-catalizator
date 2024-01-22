@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 import ru.list.surkovr.springwebfluxcatalizator.domain.Message;
 import ru.list.surkovr.springwebfluxcatalizator.service.MessageService;
 
-// Для наглядности - описание по-старому (в отличие от нового функционального стиля в GreetingRouter
+// For clarity, the description is in the old way (as opposed to the new functional style in GreetingRouter
 @RestController
 @RequestMapping("/controller")
 public class Controller {

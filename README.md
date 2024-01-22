@@ -1,4 +1,4 @@
-## Demo gradle проект с использованием реактивной Java - SpringWebFlux и R2DBC.
+## Demo gradle project using reactive Java - SpringWebFlux and R2DBC.
 
 ![Java](https://img.shields.io/badge/-Java-05122A?style=flat&logo=Java&logoColor=FFA518)
 ![Spring](https://img.shields.io/badge/-Spring-05122A?style=flat&logo=Spring&logoColor=71b23c)
@@ -12,11 +12,11 @@
 ![Webflux](https://img.shields.io/badge/-Webflux-10d7f6?style=flat)
 ![R2dbc](https://img.shields.io/badge/-R2dbc-10d7f6?style=flat)
 
-Простой demo проект для знакомства с реактивной Java.
+A simple demo project to get acquainted with reactive Java.
 
-Роутинг с применением старого стиля (в контроллере), а также нового функционального стиля в **[роутере](src/main/java/ru/list/surkovr/springwebfluxcatalizator/config/GreetingRouter.java)**.
+Routing using the old style (in the controller), as well as the new functional style in **[роутере](src/main/java/ru/list/surkovr/springwebfluxcatalizator/config/GreetingRouter.java)**.
 
-SpringSecurity с использованием JWT токена.
+SpringSecurity using JWT token.
 
-Миграции с помощью Flyway.
+Migrations using Flyway.
 

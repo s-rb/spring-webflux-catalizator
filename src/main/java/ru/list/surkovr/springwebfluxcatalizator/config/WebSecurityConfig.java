@@ -31,7 +31,7 @@ public class WebSecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        // TODO заменить на нормальный энкодер
+        // TODO replace with a better encoder
         return NoOpPasswordEncoder.getInstance();
     }
 

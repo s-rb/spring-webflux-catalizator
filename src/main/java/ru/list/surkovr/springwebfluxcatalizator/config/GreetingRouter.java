@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.*;
 import ru.list.surkovr.springwebfluxcatalizator.handlers.GreetingHandler;
 
-// В функциональном стиле, в отличие от Контроллера
+// In a functional style, as opposed to a Controller
 @Configuration
 public class GreetingRouter {
 

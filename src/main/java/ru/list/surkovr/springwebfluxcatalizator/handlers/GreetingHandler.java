@@ -25,7 +25,7 @@ public class GreetingHandler {
                         "Third",
                         "Fourth post",
                         "Fifth")
-                // Пагинация - с какого начинать и сколько элементов взять
+                // Pagination - where to start and how many elements to take
                 .skip(start)
                 .take(count)
                 .map(Message::new);
