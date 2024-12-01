@@ -14,7 +14,7 @@
 
 A simple demo project to get acquainted with reactive Java.
 
-Routing using the old style (in the controller), as well as the new functional style in **[роутере](src/main/java/ru/list/surkovr/springwebfluxcatalizator/config/GreetingRouter.java)**.
+Routing using the old style (in the controller), as well as the new functional style in **[router](src/main/java/ru/list/surkovr/springwebfluxcatalizator/config/GreetingRouter.java)**.
 
 SpringSecurity using JWT token.
 
